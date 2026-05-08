@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Fleet — LuxRide</title>
+  <meta name="description" content="Browse LuxRide's premium fleet of Mercedes, BMW, Tesla, SUVs and more. Book your ideal luxury vehicle today." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-content">
+    <div class="loader-logo">LUXRIDE</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg scrolled" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">LUX<span>RIDE</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link active" href="fleet.html">Fleet</a></li>
+        <li class="nav-item"><a class="nav-link" href="airport.html">Airport</a></li>
+        <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a class="nav-link btn-nav-book" href="booking.html"><i class="fa-solid fa-car-side me-1"></i>Book Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80');"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="container page-hero-content">
+    <div class="section-label mx-auto mb-3" data-aos="fade-up">Our Vehicles</div>
+    <h1 class="page-title mb-3" data-aos="fade-up" data-aos-delay="100">Luxury <span>Fleet</span></h1>
+    <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+      <ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active">Fleet</li></ol>
+    </nav>
+  </div>
+</section>
+
+<!-- FILTER TABS -->
+<section style="padding:40px 0;background:var(--dark-2);border-bottom:var(--border-subtle);">
+  <div class="container">
+    <div class="d-flex flex-wrap gap-2 justify-content-center" id="fleetFilter">
+      <button class="fleet-filter-btn active" data-filter="all">All Vehicles</button>
+      <button class="fleet-filter-btn" data-filter="luxury">Luxury Class</button>
+      <button class="fleet-filter-btn" data-filter="premium">Premium Sedan</button>
+      <button class="fleet-filter-btn" data-filter="suv">SUV</button>
+      <button class="fleet-filter-btn" data-filter="electric">Electric</button>
+      <button class="fleet-filter-btn" data-filter="economy">Economy</button>
+    </div>
+  </div>
+</section>
+
+<style>
+.fleet-filter-btn {
+  background: var(--dark-3); border: var(--border-subtle); color: var(--white-60);
+  padding: 10px 22px; border-radius: 50px; font-family: var(--font-body);
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 1px; cursor: pointer;
+  transition: var(--transition);
+}
+.fleet-filter-btn:hover, .fleet-filter-btn.active {
+  background: var(--gradient-gold); color: var(--black); border-color: transparent; font-weight: 700;
+}
+</style>
+
+<!-- FLEET GRID -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-4" id="fleetGrid">
+
+      <!-- Mercedes S-Class -->
+      <div class="col-md-6 col-lg-4 fleet-item" data-category="luxury" data-aos="fade-up">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600&q=80" alt="Mercedes S-Class" loading="lazy" />
+            <span class="fleet-category-badge">Luxury</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Mercedes S-Class</div>
+            <div class="fleet-model">2024 S500L AMG Line</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 4 Passengers</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> Dual-zone AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 3 Bags</div>
+              <div class="fleet-spec"><i class="fa-solid fa-wifi"></i> WiFi</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹50</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BMW 7 Series -->
+      <div class="col-md-6 col-lg-4 fleet-item" data-category="luxury" data-aos="fade-up" data-aos-delay="100">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80" alt="BMW 7 Series" loading="lazy" />
+            <span class="fleet-category-badge">Luxury</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">BMW 7 Series</div>
+            <div class="fleet-model">2024 740Li M Sport</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 4 Passengers</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> 4-zone AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 3 Bags</div>
+              <div class="fleet-spec"><i class="fa-solid fa-wifi"></i> WiFi</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹45</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tesla Model S -->
+      <div class="col-md-6 col-lg-4 fleet-item" data-category="electric" data-aos="fade-up" data-aos-delay="200">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&q=80" alt="Tesla Model S" loading="lazy" />
+            <span class="fleet-category-badge" style="background:linear-gradient(135deg,#2a6b3f,#4ade80);color:#fff;">Electric</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Tesla Model S</div>
+            <div class="fleet-model">2024 Long Range Plaid</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 5 Passengers</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-leaf"></i> Zero Emissions</div>
+              <div class="fleet-spec"><i class="fa-solid fa-bolt"></i> Autopilot</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹42</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toyota Camry -->
+      <div class="col-md-6 col-lg-4 fleet-item" data-category="premium" data-aos="fade-up">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1623005329945-08ba1dbbe53e?w=600&q=80" alt="Toyota Camry" loading="lazy" />
+            <span class="fleet-category-badge" style="background:linear-gradient(135deg,#3a3a3a,#666);">Premium</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Toyota Camry</div>
+            <div class="fleet-model">2024 Hybrid XLE</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 4 Passengers</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 2 Bags</div>
+              <div class="fleet-spec"><i class="fa-solid fa-leaf"></i> Hybrid</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹22</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Range Rover -->
+      <div class="col-md-6 col-lg-4 fleet-item" data-category="suv" data-aos="fade-up" data-aos-delay="100">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&q=80" alt="Range Rover" loading="lazy" />
+            <span class="fleet-category-badge">SUV</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Range Rover Vogue</div>
+            <div class="fleet-model">2024 Autobiography</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 6 Passengers</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 5 Bags</div>
+              <div class="fleet-spec"><i class="fa-solid fa-wifi"></i> WiFi</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹38</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toyota Innova -->
+      <div class="col-md-6 col-lg-4 fleet-item" data-category="economy" data-aos="fade-up" data-aos-delay="200">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80" alt="Toyota Innova" loading="lazy" />
+            <span class="fleet-category-badge" style="background:linear-gradient(135deg,#1a3a6a,#2a6aaa);">Economy</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Toyota Innova Crysta</div>
+            <div class="fleet-model">2024 GX</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 7 Passengers</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 4 Bags</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹15</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cadillac Escalade -->
+      <div class="col-md-6 col-lg-4 fleet-item" data-category="suv" data-aos="fade-up">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80" alt="Cadillac Escalade" loading="lazy" />
+            <span class="fleet-category-badge">SUV</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Cadillac Escalade</div>
+            <div class="fleet-model">2024 Platinum ESV</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 7 Passengers</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> Tri-zone AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 6 Bags</div>
+              <div class="fleet-spec"><i class="fa-solid fa-wifi"></i> WiFi</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹55</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tesla Model X -->
+      <div class="col-md-6 col-lg-4 fleet-item" data-category="electric" data-aos="fade-up" data-aos-delay="100">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1536700503339-1e4b06520771?w=600&q=80" alt="Tesla Model X" loading="lazy" />
+            <span class="fleet-category-badge" style="background:linear-gradient(135deg,#2a6b3f,#4ade80);color:#fff;">Electric</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Tesla Model X</div>
+            <div class="fleet-model">2024 Long Range</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 7 Passengers</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-leaf"></i> Zero Emissions</div>
+              <div class="fleet-spec"><i class="fa-solid fa-door-open"></i> Falcon Doors</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹48</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Honda City -->
+      <div class="col-md-6 col-lg-4 fleet-item" data-category="economy" data-aos="fade-up" data-aos-delay="200">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80" alt="Honda City" loading="lazy" />
+            <span class="fleet-category-badge" style="background:linear-gradient(135deg,#1a3a6a,#2a6aaa);">Economy</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Honda City</div>
+            <div class="fleet-model">2024 ZX CVT</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 4 Passengers</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 2 Bags</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹12</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="section-pad bg-dark-2">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label mx-auto">All Vehicles Include</div>
+      <h2 class="section-title">Standard <span>Amenities</span></h2>
+    </div>
+    <div class="row g-3 justify-content-center">
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in">
+        <div class="service-card text-center p-3">
+          <i class="fa-solid fa-snowflake fa-2x text-gold mb-2"></i>
+          <div style="font-size:0.82rem;color:var(--white-70);">Climate Control</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+        <div class="service-card text-center p-3">
+          <i class="fa-solid fa-wifi fa-2x text-gold mb-2"></i>
+          <div style="font-size:0.82rem;color:var(--white-70);">Free WiFi</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+        <div class="service-card text-center p-3">
+          <i class="fa-solid fa-plug fa-2x text-gold mb-2"></i>
+          <div style="font-size:0.82rem;color:var(--white-70);">Phone Charger</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+        <div class="service-card text-center p-3">
+          <i class="fa-solid fa-water fa-2x text-gold mb-2"></i>
+          <div style="font-size:0.82rem;color:var(--white-70);">Bottled Water</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+        <div class="service-card text-center p-3">
+          <i class="fa-solid fa-newspaper fa-2x text-gold mb-2"></i>
+          <div style="font-size:0.82rem;color:var(--white-70);">Daily News</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+        <div class="service-card text-center p-3">
+          <i class="fa-solid fa-shield-halved fa-2x text-gold mb-2"></i>
+          <div style="font-size:0.82rem;color:var(--white-70);">GPS Tracking</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4"><div class="footer-logo">LUX<span>RIDE</span></div><p class="footer-tagline">Premium taxi and chauffeur services.</p><div class="footer-social"><a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a><a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a><a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a></div></div>
+      <div class="col-lg-2 col-6"><div class="footer-heading">Fleet</div><ul class="footer-links"><li><a href="#">Luxury Class</a></li><li><a href="#">Premium Sedan</a></li><li><a href="#">SUV</a></li><li><a href="#">Electric</a></li></ul></div>
+      <div class="col-lg-2 col-6"><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="col-lg-4"><div class="footer-heading">Newsletter</div><form class="newsletter-form newsletter-form-js"><input type="email" class="newsletter-input" placeholder="Your email" required /><button type="submit" class="newsletter-btn"><i class="fa-solid fa-paper-plane"></i></button></form></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-bottom-text">© 2024 LuxRide. All rights reserved.</div></div>
+  </div>
+</footer>
+<button id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/script.js"></script>
+<script>
+// Fleet filter
+document.querySelectorAll('.fleet-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fleet-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    document.querySelectorAll('.fleet-item').forEach(item => {
+      if (filter === 'all' || item.getAttribute('data-category') === filter) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

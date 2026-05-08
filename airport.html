@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airport Taxi Service — LuxRide</title>
+  <meta name="description" content="Premium airport taxi transfers with flight tracking, meet & greet and professional chauffeurs. Book your airport ride with LuxRide." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-content">
+    <div class="loader-logo">LUXRIDE</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg scrolled" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">LUX<span>RIDE</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="fleet.html">Fleet</a></li>
+        <li class="nav-item"><a class="nav-link active" href="airport.html">Airport</a></li>
+        <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a class="nav-link btn-nav-book" href="booking.html"><i class="fa-solid fa-car-side me-1"></i>Book Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="min-height:80vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--black);padding-top:80px;">
+  <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80') center/cover;opacity:0.2;"></div>
+  <div class="hero-grid-overlay"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.92),rgba(10,8,2,0.75));"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="hero-eyebrow"><i class="fa-solid fa-plane"></i> Airport Transfer Specialists</div>
+        <h1 class="hero-title">Fly In. <span class="line-gold">Ride Luxe.</span> Every Time.</h1>
+        <p class="hero-subtitle">Professional airport transfers with real-time flight tracking, meet & greet service, and immaculate vehicles waiting the moment you land.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="booking.html" class="btn-gold"><i class="fa-solid fa-plane-arrival"></i> Book Airport Transfer</a>
+          <a href="tel:+918001234567" class="btn-outline-gold"><i class="fa-solid fa-phone"></i> Call Concierge</a>
+        </div>
+        <div class="hero-badges mt-4">
+          <div class="hero-badge"><i class="fa-solid fa-plane"></i> Flight Tracking</div>
+          <div class="hero-badge"><i class="fa-solid fa-clock"></i> Always On Time</div>
+          <div class="hero-badge"><i class="fa-solid fa-star"></i> Meet & Greet</div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <!-- Quick Booking Form -->
+        <div class="hero-booking-card">
+          <div class="booking-card-title"><i class="fa-solid fa-plane-arrival text-gold me-2"></i>Book Airport Transfer</div>
+          <div class="booking-card-sub">Instant confirmation — driver details sent immediately</div>
+          <form action="booking.html">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="form-floating-dark">
+                  <label class="form-label">Flight Number</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-plane input-icon"></i>
+                    <input type="text" class="form-input-dark" placeholder="e.g. AI 203" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating-dark">
+                  <label class="form-label">Airport</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-location-dot input-icon"></i>
+                    <select class="form-input-dark">
+                      <option>Chhatrapati Shivaji, Mumbai (BOM)</option>
+                      <option>Indira Gandhi, Delhi (DEL)</option>
+                      <option>Kempegowda, Bangalore (BLR)</option>
+                      <option>Rajiv Gandhi, Hyderabad (HYD)</option>
+                      <option>Chennai International (MAA)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-floating-dark">
+                  <label class="form-label">Arrival Date</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-calendar input-icon"></i>
+                    <input type="date" class="form-input-dark" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-floating-dark">
+                  <label class="form-label">Passengers</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-users input-icon"></i>
+                    <select class="form-input-dark">
+                      <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-gold w-100 justify-content-center">
+                  <i class="fa-solid fa-bolt"></i> Book Airport Ride
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AIRPORTS COVERED -->
+<section class="section-pad bg-dark-2">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label mx-auto">Coverage</div>
+      <h2 class="section-title">Airports We <span>Serve</span></h2>
+      <div class="section-divider center"></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="airport-feature">
+          <div class="airport-feature-icon"><i class="fa-solid fa-plane"></i></div>
+          <div>
+            <div class="airport-feature-title">Mumbai — Chhatrapati Shivaji (BOM)</div>
+            <div class="airport-feature-desc">T1 & T2 — Domestic and International arrivals. 24/7 coverage with meet & greet inside.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+        <div class="airport-feature">
+          <div class="airport-feature-icon"><i class="fa-solid fa-plane"></i></div>
+          <div>
+            <div class="airport-feature-title">Delhi — Indira Gandhi (DEL)</div>
+            <div class="airport-feature-desc">T1, T2 & T3. Full terminal coverage including all major international airlines.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="airport-feature">
+          <div class="airport-feature-icon"><i class="fa-solid fa-plane"></i></div>
+          <div>
+            <div class="airport-feature-title">Bangalore — Kempegowda (BLR)</div>
+            <div class="airport-feature-desc">Terminal 1 & 2 — Tech corridor specialists with office park drop-off included.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="airport-feature">
+          <div class="airport-feature-icon"><i class="fa-solid fa-plane"></i></div>
+          <div>
+            <div class="airport-feature-title">Hyderabad — Rajiv Gandhi (HYD)</div>
+            <div class="airport-feature-desc">Full coverage with HITEC City express routes. Corporate account specialists.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="airport-feature">
+          <div class="airport-feature-icon"><i class="fa-solid fa-plane"></i></div>
+          <div>
+            <div class="airport-feature-title">Chennai International (MAA)</div>
+            <div class="airport-feature-desc">Domestic & international terminals with coastal city routes. Tamil-speaking drivers available.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="airport-feature">
+          <div class="airport-feature-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+          <div>
+            <div class="airport-feature-title">+ 7 More Cities</div>
+            <div class="airport-feature-desc">Kolkata, Pune, Ahmedabad, Jaipur, Goa, Kochi and more. Growing every month.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label mx-auto">The Process</div>
+      <h2 class="section-title">How It <span>Works</span></h2>
+      <div class="section-divider center"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up">
+        <div class="service-card text-center">
+          <div style="width:50px;height:50px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:var(--black);font-size:1.2rem;margin:0 auto 20px;">1</div>
+          <h4 class="service-title">Book Online</h4>
+          <p class="service-desc">Enter your flight details, destination, and vehicle choice. Confirmation in under 60 seconds.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card text-center">
+          <div style="width:50px;height:50px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:var(--black);font-size:1.2rem;margin:0 auto 20px;">2</div>
+          <h4 class="service-title">We Track Your Flight</h4>
+          <p class="service-desc">Our system monitors your flight live. Any delay? Your driver adjusts automatically.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card text-center">
+          <div style="width:50px;height:50px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:var(--black);font-size:1.2rem;margin:0 auto 20px;">3</div>
+          <h4 class="service-title">Meet & Greet</h4>
+          <p class="service-desc">Your chauffeur waits at arrivals with a name sign, helps with luggage, and escorts you to the vehicle.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card text-center">
+          <div style="width:50px;height:50px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:var(--black);font-size:1.2rem;margin:0 auto 20px;">4</div>
+          <h4 class="service-title">Arrive in Style</h4>
+          <p class="service-desc">Relax in your premium vehicle. Rate your experience and book your return in the app.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLIGHT TRACKING FEATURE -->
+<section class="section-pad bg-dark-2">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="section-label">Technology</div>
+        <h2 class="section-title">Smart <span>Flight Tracking</span></h2>
+        <div class="section-divider"></div>
+        <p style="color:var(--white-60);line-height:1.9;margin-bottom:24px;">Our proprietary flight monitoring system connects to live airline data — no manual input needed. The moment your flight status changes, your driver knows about it.</p>
+        <div class="d-flex flex-column gap-3">
+          <div class="d-flex align-items-center gap-3">
+            <div style="width:44px;height:44px;background:var(--gold-rgba);border:var(--border-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;"><i class="fa-solid fa-bolt"></i></div>
+            <div><div style="font-weight:600;color:var(--white);">Real-time Updates Every 60 Seconds</div><div style="font-size:0.82rem;color:var(--white-50);">Continuous monitoring from departure to touchdown.</div></div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <div style="width:44px;height:44px;background:var(--gold-rgba);border:var(--border-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;"><i class="fa-solid fa-bell"></i></div>
+            <div><div style="font-weight:600;color:var(--white);">Automatic Driver Notification</div><div style="font-size:0.82rem;color:var(--white-50);">Driver is alerted instantly to any change in arrival time.</div></div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <div style="width:44px;height:44px;background:var(--gold-rgba);border:var(--border-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;"><i class="fa-solid fa-mobile-screen"></i></div>
+            <div><div style="font-weight:600;color:var(--white);">SMS + App Notifications for You</div><div style="font-size:0.82rem;color:var(--white-50);">Stay informed — get updates on driver location as you land.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="glass-card-gold p-5 text-center">
+          <i class="fa-solid fa-radar fa-4x text-gold mb-3 float-anim"></i>
+          <h3 style="font-family:var(--font-display);color:var(--white);margin-bottom:16px;">Live Flight Status</h3>
+          <div style="background:var(--dark-3);border-radius:var(--radius);padding:20px;margin-bottom:16px;text-align:left;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span style="font-size:0.8rem;color:var(--white-50);">Flight</span><span style="color:var(--gold);font-weight:600;">AI 203</span></div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span style="font-size:0.8rem;color:var(--white-50);">Status</span><span style="color:#4ade80;font-weight:600;"><i class="fa-solid fa-circle" style="font-size:0.5rem;margin-right:6px;"></i>On Time</span></div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span style="font-size:0.8rem;color:var(--white-50);">ETA</span><span style="color:var(--white);font-weight:600;">14:35 IST</span></div>
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:0.8rem;color:var(--white-50);">Your Driver</span><span style="color:var(--white);font-weight:600;">Ravi S. — 3 min away</span></div>
+          </div>
+          <div style="font-size:0.78rem;color:var(--white-40);">* Simulated display for illustration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TABLE -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label mx-auto">Transparent Pricing</div>
+      <h2 class="section-title">Airport Transfer <span>Packages</span></h2>
+      <div class="section-divider center"></div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="pricing-card">
+          <div class="pricing-name">Economy</div>
+          <div class="pricing-price"><span class="currency">₹</span>699<span class="period"> /transfer</span></div>
+          <p style="font-size:0.82rem;color:var(--white-50);margin:12px 0;">Up to 30km from airport</p>
+          <div class="pricing-features">
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> Sedan (Toyota/Honda)</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> Flight Tracking</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> 2 Passengers</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> 2 Luggage Bags</div>
+            <div class="pricing-feature disabled"><i class="fa-solid fa-xmark"></i> Meet & Greet</div>
+            <div class="pricing-feature disabled"><i class="fa-solid fa-xmark"></i> WiFi Onboard</div>
+          </div>
+          <a href="booking.html" class="btn-outline-gold w-100 justify-content-center">Book Economy</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-card featured">
+          <span class="pricing-badge">Most Popular</span>
+          <div class="pricing-name">Business</div>
+          <div class="pricing-price"><span class="currency">₹</span>1,499<span class="period"> /transfer</span></div>
+          <p style="font-size:0.82rem;color:var(--white-50);margin:12px 0;">Up to 50km from airport</p>
+          <div class="pricing-features">
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> BMW / Mercedes</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> Flight Tracking</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> 4 Passengers</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> 3 Luggage Bags</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> Meet & Greet</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> WiFi Onboard</div>
+          </div>
+          <a href="booking.html" class="btn-gold w-100 justify-content-center">Book Business</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-card">
+          <div class="pricing-name">VIP First Class</div>
+          <div class="pricing-price"><span class="currency">₹</span>2,999<span class="period"> /transfer</span></div>
+          <p style="font-size:0.82rem;color:var(--white-50);margin:12px 0;">Unlimited distance</p>
+          <div class="pricing-features">
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> Mercedes / Range Rover</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> Flight Tracking</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> 6 Passengers</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> Unlimited Luggage</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> Meet & Greet + Escort</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i> Premium Amenities</div>
+          </div>
+          <a href="booking.html" class="btn-outline-gold w-100 justify-content-center">Book VIP</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4"><div class="footer-logo">LUX<span>RIDE</span></div><p class="footer-tagline">Premium taxi and chauffeur services.</p><div class="footer-social"><a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a><a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a></div></div>
+      <div class="col-lg-2 col-6"><div class="footer-heading">Airport</div><ul class="footer-links"><li><a href="#">Mumbai BOM</a></li><li><a href="#">Delhi DEL</a></li><li><a href="#">Bangalore BLR</a></li><li><a href="#">Hyderabad HYD</a></li></ul></div>
+      <div class="col-lg-2 col-6"><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="col-lg-4"><div class="footer-heading">Newsletter</div><form class="newsletter-form newsletter-form-js"><input type="email" class="newsletter-input" placeholder="Your email" required /><button type="submit" class="newsletter-btn"><i class="fa-solid fa-paper-plane"></i></button></form></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-bottom-text">© 2024 LuxRide. All rights reserved.</div></div>
+  </div>
+</footer>
+<button id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

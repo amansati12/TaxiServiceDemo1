@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuxRide — Premium Taxi & Chauffeur Service</title>
+  <meta name="description" content="Experience luxury transportation with LuxRide. Premium taxis, airport transfers, corporate rides and chauffeur services." />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader">
+  <div class="loader-content">
+    <div class="loader-logo">LUXRIDE</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">LUX<span>RIDE</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="fleet.html">Fleet</a></li>
+        <li class="nav-item"><a class="nav-link" href="airport.html">Airport</a></li>
+        <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="nav-link btn-nav-book" href="booking.html"><i class="fa-solid fa-car-side me-1"></i>Book Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero-section" id="home">
+  <div class="hero-bg-image"></div>
+  <div class="hero-grid-overlay"></div>
+
+  <!-- Floating decoration -->
+  <div style="position:absolute;top:20%;right:5%;width:300px;height:300px;border:1px solid rgba(201,168,76,0.08);border-radius:50%;animation:rotateSlow 30s linear infinite;z-index:1;"></div>
+  <div style="position:absolute;top:25%;right:8%;width:200px;height:200px;border:1px solid rgba(201,168,76,0.12);border-radius:50%;animation:rotateSlow 20s linear infinite reverse;z-index:1;"></div>
+
+  <div class="container hero-content">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="hero-eyebrow">
+          <i class="fa-solid fa-star"></i>
+          Premium Chauffeur Service Since 2016
+        </div>
+        <h1 class="hero-title">
+          Arrive in
+          <span class="line-gold">Pure Luxury.</span>
+          Every Journey.
+        </h1>
+        <p class="hero-subtitle">
+          Experience transportation redefined — where every ride is a statement of elegance, precision, and comfort. Your personal chauffeur awaits.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="booking.html" class="btn-gold">
+            <i class="fa-solid fa-car-side"></i> Book Your Ride
+          </a>
+          <a href="fleet.html" class="btn-outline-gold">
+            <i class="fa-solid fa-play-circle"></i> View Fleet
+          </a>
+        </div>
+        <div class="hero-badges">
+          <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> 100% Safe</div>
+          <div class="hero-badge"><i class="fa-solid fa-clock"></i> 24/7 Available</div>
+          <div class="hero-badge"><i class="fa-solid fa-star"></i> 4.9 Rating</div>
+          <div class="hero-badge"><i class="fa-solid fa-location-dot"></i> Pan India</div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="hero-booking-card">
+          <div class="booking-card-title"><i class="fa-solid fa-route text-gold me-2"></i>Instant Ride Booking</div>
+          <div class="booking-card-sub">Get your fare estimate in seconds</div>
+          <form id="heroBookingForm">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="form-floating-dark">
+                  <label class="form-label">Pickup Location</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-circle-dot input-icon" style="color:#4ade80;"></i>
+                    <input type="text" class="form-input-dark" id="heroPickup" placeholder="Enter pickup address" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating-dark">
+                  <label class="form-label">Destination</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-location-dot input-icon" style="color:#f87171;"></i>
+                    <input type="text" class="form-input-dark" id="heroDestination" placeholder="Enter destination" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-floating-dark">
+                  <label class="form-label">Car Type</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-car input-icon"></i>
+                    <select class="form-input-dark" id="heroCarType">
+                      <option value="economy">Economy</option>
+                      <option value="premium">Premium</option>
+                      <option value="suv">SUV</option>
+                      <option value="luxury">Luxury</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-floating-dark">
+                  <label class="form-label">Date & Time</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-calendar input-icon"></i>
+                    <input type="datetime-local" class="form-input-dark" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-12" id="heroFareBox" style="display:none;">
+                <div class="fare-estimate-box">
+                  <div class="fare-label">Estimated Fare</div>
+                  <div class="fare-amount" id="heroFareAmount">₹0</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-gold w-100 justify-content-center">
+                  <i class="fa-solid fa-bolt"></i> Book Now — Get Instant Fare
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);text-align:center;z-index:2;animation:floatY 2s ease-in-out infinite;">
+    <div style="width:1px;height:60px;background:linear-gradient(to bottom,rgba(201,168,76,0.8),transparent);margin:0 auto;"></div>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats-section">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-6 col-md-3">
+        <div class="stat-item" data-aos="fade-up">
+          <span class="stat-number" data-counter data-target="50000" data-suffix="+">0+</span>
+          <div class="stat-label">Happy Riders</div>
+        </div>
+      </div>
+      <div class="col-md-auto d-none d-md-block"><div class="stat-divider"></div></div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+          <span class="stat-number" data-counter data-target="120" data-suffix="+">0+</span>
+          <div class="stat-label">Luxury Vehicles</div>
+        </div>
+      </div>
+      <div class="col-md-auto d-none d-md-block"><div class="stat-divider"></div></div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+          <span class="stat-number" data-counter data-target="8" data-suffix="+ Yrs">0</span>
+          <div class="stat-label">Experience</div>
+        </div>
+      </div>
+      <div class="col-md-auto d-none d-md-block"><div class="stat-divider"></div></div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+          <span class="stat-number" data-counter data-target="49" data-suffix="/5">0</span>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services-section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label mx-auto">Our Offerings</div>
+      <h2 class="section-title">Premium <span>Services</span></h2>
+      <div class="section-divider center"></div>
+      <p class="section-subtitle mx-auto">From airport transfers to bespoke chauffeur experiences, every service is crafted to perfection.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+          <h3 class="service-title">Airport Transfers</h3>
+          <p class="service-desc">Stress-free airport pickups and drops with real-time flight tracking and meet & greet service.</p>
+          <a href="airport.html" class="service-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3 class="service-title">Corporate Rides</h3>
+          <p class="service-desc">Impress clients and partners with punctual, professional rides in premium executive vehicles.</p>
+          <a href="services.html" class="service-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-rings-wedding"></i></div>
+          <h3 class="service-title">Wedding Limousine</h3>
+          <p class="service-desc">Make your special day unforgettable with our decorated bridal cars and elegant chauffeurs.</p>
+          <a href="services.html" class="service-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-crown"></i></div>
+          <h3 class="service-title">VIP Chauffeur</h3>
+          <p class="service-desc">Dedicated personal chauffeur service for VIPs, executives, and celebrities with full privacy.</p>
+          <a href="services.html" class="service-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h3 class="service-title">City Tour Packages</h3>
+          <p class="service-desc">Curated city sightseeing experiences with knowledgeable drivers who know every hidden gem.</p>
+          <a href="tours.html" class="service-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-road"></i></div>
+          <h3 class="service-title">Long Distance Travel</h3>
+          <p class="service-desc">Comfortable intercity journeys with experienced drivers and luxury vehicles for the long haul.</p>
+          <a href="services.html" class="service-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section-pad bg-dark-2">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="section-label">Why LuxRide</div>
+        <h2 class="section-title">The Gold <span>Standard</span> of Travel</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle mb-4">We don't just drive you — we elevate your entire travel experience from booking to destination.</p>
+        <div class="d-flex flex-column gap-3">
+          <div class="airport-feature">
+            <div class="airport-feature-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <div>
+              <div class="airport-feature-title">Certified Professional Drivers</div>
+              <div class="airport-feature-desc">All drivers are background-checked, trained in luxury hospitality, and fluent in multiple languages.</div>
+            </div>
+          </div>
+          <div class="airport-feature">
+            <div class="airport-feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <div class="airport-feature-title">Safety First, Always</div>
+              <div class="airport-feature-desc">Real-time GPS tracking, SOS button, and 24/7 monitoring for every single trip.</div>
+            </div>
+          </div>
+          <div class="airport-feature">
+            <div class="airport-feature-icon"><i class="fa-solid fa-star"></i></div>
+            <div>
+              <div class="airport-feature-title">Immaculate Luxury Vehicles</div>
+              <div class="airport-feature-desc">Our fleet is cleaned, sanitized, and inspected before every ride. Zero compromises.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="glass-card-gold p-4 text-center mb-3">
+              <i class="fa-solid fa-clock fa-2x text-gold mb-3"></i>
+              <h5 class="text-white fw-600" style="font-family:var(--font-display)">On-Time Guarantee</h5>
+              <p class="text-white-50 small mb-0">We track your flight and adjust pickup times in real-time.</p>
+            </div>
+            <div class="glass-card p-4 text-center">
+              <i class="fa-solid fa-mobile-screen fa-2x text-gold mb-3"></i>
+              <h5 class="text-white fw-600" style="font-family:var(--font-display)">Easy App Booking</h5>
+              <p class="text-white-50 small mb-0">Book, track, and manage rides with our intuitive app.</p>
+            </div>
+          </div>
+          <div class="col-6" style="margin-top:30px;">
+            <div class="glass-card p-4 text-center mb-3">
+              <i class="fa-solid fa-headset fa-2x text-gold mb-3"></i>
+              <h5 class="text-white fw-600" style="font-family:var(--font-display)">24/7 Concierge</h5>
+              <p class="text-white-50 small mb-0">Our support team is available around the clock, every day.</p>
+            </div>
+            <div class="glass-card-gold p-4 text-center">
+              <i class="fa-solid fa-tag fa-2x text-gold mb-3"></i>
+              <h5 class="text-white fw-600" style="font-family:var(--font-display)">Transparent Pricing</h5>
+              <p class="text-white-50 small mb-0">No hidden charges. What you see is what you pay.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLEET PREVIEW -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label mx-auto">Our Fleet</div>
+      <h2 class="section-title">Luxury <span>Vehicles</span></h2>
+      <div class="section-divider center"></div>
+      <p class="section-subtitle mx-auto">Handpicked premium vehicles maintained to the highest standards for your comfort.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600&q=80" alt="Mercedes S-Class" loading="lazy" />
+            <span class="fleet-category-badge">Luxury</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Mercedes S-Class</div>
+            <div class="fleet-model">2024 Executive Edition</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 4 Pax</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 3 Bags</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹50</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80" alt="BMW 7 Series" loading="lazy" />
+            <span class="fleet-category-badge">Premium</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">BMW 7 Series</div>
+            <div class="fleet-model">2024 Comfort Plus</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 4 Pax</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-suitcase"></i> 3 Bags</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹45</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="fleet-card">
+          <div class="fleet-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&q=80" alt="Tesla Model S" loading="lazy" />
+            <span class="fleet-category-badge">Electric</span>
+          </div>
+          <div class="fleet-body">
+            <div class="fleet-name">Tesla Model S</div>
+            <div class="fleet-model">2024 Long Range</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec"><i class="fa-solid fa-users"></i> 5 Pax</div>
+              <div class="fleet-spec"><i class="fa-solid fa-snowflake"></i> AC</div>
+              <div class="fleet-spec"><i class="fa-solid fa-leaf"></i> EV</div>
+            </div>
+            <div class="fleet-price-row">
+              <div class="fleet-price">From <strong>₹42</strong><span class="per">/km</span></div>
+              <a href="booking.html" class="btn-gold" style="padding:10px 20px;font-size:0.78rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="fleet.html" class="btn-outline-gold">View Full Fleet <i class="fa-solid fa-arrow-right ms-1"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- APP DOWNLOAD SECTION -->
+<section class="app-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="section-label">Mobile App</div>
+        <h2 class="section-title">Download the <span>LuxRide</span> App</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle mb-5">Book rides, track your chauffeur, manage bookings, and access exclusive offers — all from your phone.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <div class="app-badge">
+            <i class="fa-brands fa-apple"></i>
+            <div class="app-badge-text">
+              <div class="small">Download on the</div>
+              <div class="large">App Store</div>
+            </div>
+          </div>
+          <div class="app-badge">
+            <i class="fa-brands fa-google-play"></i>
+            <div class="app-badge-text">
+              <div class="small">Get it on</div>
+              <div class="large">Google Play</div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3 mt-4">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://luxride.com&bgcolor=111111&color=C9A84C" alt="QR Code" style="border-radius:8px;border:var(--border-gold);" />
+          <div>
+            <div style="font-size:0.8rem;color:var(--white-50);">Scan QR to</div>
+            <div style="font-weight:600;color:var(--white);">Download App</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center" data-aos="fade-left">
+        <div style="position:relative;display:inline-block;">
+          <div style="width:280px;height:560px;background:var(--dark-3);border:var(--border-gold);border-radius:40px;margin:0 auto;display:flex;align-items:center;justify-content:center;box-shadow:0 30px 80px rgba(0,0,0,0.7),var(--shadow-gold);animation:floatY 4s ease-in-out infinite;overflow:hidden;">
+            <div style="text-align:center;padding:30px;">
+              <div style="font-family:var(--font-accent);font-size:1.2rem;color:var(--gold);letter-spacing:3px;margin-bottom:20px;">LUXRIDE</div>
+              <i class="fa-solid fa-car-side fa-4x text-gold mb-3" style="opacity:0.8;"></i>
+              <div style="background:var(--dark-4);border-radius:15px;padding:15px;margin-bottom:15px;">
+                <div style="font-size:0.75rem;color:var(--white-50);">Next Ride</div>
+                <div style="font-size:1rem;color:var(--white);font-weight:600;">Mercedes S-Class</div>
+                <div style="font-size:0.82rem;color:var(--gold);">Arriving in 3 mins</div>
+              </div>
+              <div style="width:100%;height:3px;background:var(--gradient-gold);border-radius:3px;"></div>
+              <div style="margin-top:15px;font-size:0.75rem;color:var(--white-40);">★★★★★ Rated 4.9</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label mx-auto">Testimonials</div>
+      <h2 class="section-title">What Our <span>Clients</span> Say</h2>
+      <div class="section-divider center"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="testimonial-text">Absolutely impeccable service from start to finish. The Mercedes was spotless and the driver was professional beyond measure. LuxRide has changed how I travel for business.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar-placeholder">AR</div>
+            <div>
+              <div class="testimonial-name">Arjun Rajput</div>
+              <div class="testimonial-role">CEO, TechVentures India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="testimonial-text">Used LuxRide for our wedding day and it was pure magic. The white BMW was beautifully decorated and our chauffeur was so courteous. Highly recommend for special occasions!</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar-placeholder">PM</div>
+            <div>
+              <div class="testimonial-name">Priya Mehta</div>
+              <div class="testimonial-role">Happy Bride, Mumbai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+          <p class="testimonial-text">The airport transfer was seamless. Driver was waiting with my name sign, helped with luggage, and the car smelled divine. This is how airport transfers should always be.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar-placeholder">SK</div>
+            <div>
+              <div class="testimonial-name">Samuel Kiran</div>
+              <div class="testimonial-role">Frequent Flyer, Bangalore</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-4" data-aos="fade-right">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Common <span>Questions</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Have more questions? Our support team is available 24/7 to help.</p>
+        <a href="contact.html" class="btn-gold mt-4" style="display:inline-flex;">
+          <i class="fa-solid fa-headset"></i> Contact Support
+        </a>
+      </div>
+      <div class="col-lg-8" data-aos="fade-left">
+        <div class="accordion faq-accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                How do I book a LuxRide vehicle?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">You can book via our website, mobile app, or by calling our 24/7 concierge. Enter your pickup/destination, select your vehicle, choose your date/time, and confirm. You'll receive instant confirmation with driver details.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                What vehicles are available?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Our fleet includes Economy Sedans, Premium Sedans (BMW, Mercedes), Luxury SUVs (Range Rover, Escalade), Tesla electric vehicles, and stretch limousines for special occasions.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Is airport pickup included with flight tracking?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes! All airport transfers include complimentary flight tracking. If your flight is delayed or early, your driver automatically adjusts. We also offer meet & greet service inside the arrival terminal.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                Can I cancel or modify my booking?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">You can cancel or modify up to 2 hours before your ride for free. Cancellations within 2 hours incur a 20% fee. Last-minute changes are handled by our concierge team on a best-effort basis.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                What payment methods are accepted?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">We accept all major credit/debit cards, UPI (GPay, PhonePe, Paytm), net banking, corporate accounts, and cash. All digital payments are secured with 256-bit encryption.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section style="padding:80px 0;background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(20,15,5,0.95));border-top:var(--border-gold);border-bottom:var(--border-gold);">
+  <div class="container text-center" data-aos="zoom-in">
+    <div style="font-family:var(--font-accent);font-size:0.8rem;letter-spacing:4px;color:var(--gold);margin-bottom:16px;">READY TO RIDE IN LUXURY?</div>
+    <h2 class="section-title mb-3">Your Premium Ride <span>Awaits</span></h2>
+    <p style="color:var(--white-50);max-width:500px;margin:0 auto 36px;">Book now and experience the LuxRide difference. First-time riders get 20% off with code <strong style="color:var(--gold);">WELCOME20</strong></p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="booking.html" class="btn-gold"><i class="fa-solid fa-bolt"></i> Book Instant Ride</a>
+      <a href="tel:+918001234567" class="btn-outline-gold"><i class="fa-solid fa-phone"></i> Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-logo">LUX<span>RIDE</span></div>
+        <p class="footer-tagline">Premium taxi and chauffeur services. Where every journey becomes a luxury experience worth remembering.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="airport.html">Airport Transfer</a></li>
+          <li><a href="services.html">Corporate Rides</a></li>
+          <li><a href="services.html">Wedding Limo</a></li>
+          <li><a href="services.html">VIP Chauffeur</a></li>
+          <li><a href="tours.html">City Tours</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="fleet.html">Our Fleet</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-heading">Newsletter</div>
+        <p style="font-size:0.85rem;color:var(--white-50);margin-bottom:16px;">Subscribe for exclusive offers, travel tips, and luxury ride updates.</p>
+        <form class="newsletter-form newsletter-form-js">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required />
+          <button type="submit" class="newsletter-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <div class="mt-4">
+          <div style="font-size:0.78rem;color:var(--white-50);margin-bottom:8px;"><i class="fa-solid fa-phone text-gold me-2"></i>+91 800-LUXRIDE</div>
+          <div style="font-size:0.78rem;color:var(--white-50);margin-bottom:8px;"><i class="fa-solid fa-envelope text-gold me-2"></i>concierge@luxride.com</div>
+          <div style="font-size:0.78rem;color:var(--white-50);"><i class="fa-solid fa-location-dot text-gold me-2"></i>Mumbai, Delhi, Bangalore, Hyderabad</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">© 2024 LuxRide. All rights reserved. Crafted with <i class="fa-solid fa-heart text-gold"></i> for luxury travel.</div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="backToTop" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
